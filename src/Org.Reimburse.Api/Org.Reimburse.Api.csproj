@@ -4,5 +4,13 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="Controllers\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Infrastructure\Org.Reimburse.Infrastructure\Org.Reimburse.Infrastructure.csproj" />
+  </ItemGroup>
+
 
 </Project>

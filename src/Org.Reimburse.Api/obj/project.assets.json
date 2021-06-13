@@ -1,11 +1,48 @@
 {
   "version": 3,
   "targets": {
-    ".NETCoreApp,Version=v3.1": {}
+    ".NETCoreApp,Version=v3.1": {
+      "Org.Reimburse.Core/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "compile": {
+          "bin/placeholder/Org.Reimburse.Core.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Org.Reimburse.Core.dll": {}
+        }
+      },
+      "Org.Reimburse.Infrastructure/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "dependencies": {
+          "Org.Reimburse.Core": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Org.Reimburse.Infrastructure.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Org.Reimburse.Infrastructure.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "Org.Reimburse.Core/1.0.0": {
+      "type": "project",
+      "path": "../Core/Org.Reimburse.Core/Org.Reimburse.Core.csproj",
+      "msbuildProject": "../Core/Org.Reimburse.Core/Org.Reimburse.Core.csproj"
+    },
+    "Org.Reimburse.Infrastructure/1.0.0": {
+      "type": "project",
+      "path": "../Infrastructure/Org.Reimburse.Infrastructure/Org.Reimburse.Infrastructure.csproj",
+      "msbuildProject": "../Infrastructure/Org.Reimburse.Infrastructure/Org.Reimburse.Infrastructure.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    ".NETCoreApp,Version=v3.1": []
+    ".NETCoreApp,Version=v3.1": [
+      "Org.Reimburse.Infrastructure >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\User\\.nuget\\packages\\": {},
@@ -40,7 +77,11 @@
       "frameworks": {
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\User\\Desktop\\Org.Reimburse\\src\\Infrastructure\\Org.Reimburse.Infrastructure\\Org.Reimburse.Infrastructure.csproj": {
+              "projectPath": "C:\\Users\\User\\Desktop\\Org.Reimburse\\src\\Infrastructure\\Org.Reimburse.Infrastructure\\Org.Reimburse.Infrastructure.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

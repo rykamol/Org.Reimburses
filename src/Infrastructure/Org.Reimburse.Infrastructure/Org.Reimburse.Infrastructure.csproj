@@ -4,4 +4,8 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\Core\Org.Reimburse.Core\Org.Reimburse.Core.csproj" />
+  </ItemGroup>
+
 </Project>

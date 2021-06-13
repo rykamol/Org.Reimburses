@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Org.Reimburse.Core.Models
 {
-    public class Employee
+    public class MonthlyPaidSalary
     {
     }
 }
