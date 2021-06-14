@@ -1,10 +1,9 @@
-﻿using Org.Reimburse.Core.Base_Repository_Interface;
-using Org.Reimburse.Core.Models;
+﻿using Org.Reimburse.Core.Models;
 
 namespace Org.Reimburse.Core.Repository_Interfaces
 {
-    public interface IEmployeeBusiness : IRepository<Employee>
+    public interface IEmployeeRepository
     {
-
+        Employee GetEmployeeByCode(string empCode);
     }
 }
