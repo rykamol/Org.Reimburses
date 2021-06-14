@@ -2,8 +2,8 @@
 
 namespace Org.Reimburse.Core.Repository_Interfaces
 {
-    public interface IMonthlyPaidSalaryBusiness
+    public interface IClaimCourseRepository
     {
-        void PaySalary(MonthlyPaidSalary entity);
+        void ClaimCourse(ClaimCourse entity);
     }
 }
