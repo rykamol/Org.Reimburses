@@ -2,12 +2,13 @@
 using Org.Reimburse.Core.Models;
 using Org.Reimburse.Core.Repository_Interfaces;
 using System;
+using System.Collections.Generic;
 
 namespace Org.Reimburse.Infrastructure.Business
 {
     public class ClaimCourseBusiness : IClaimCourseBusiness
     {
-        private IClaimCourseRepository _claimCourseRepository;
+        private readonly IClaimCourseRepository _claimCourseRepository;
 
         public ClaimCourseBusiness(IClaimCourseRepository claimCourseRepository)
         {
@@ -18,6 +19,30 @@ namespace Org.Reimburse.Infrastructure.Business
             try
             {
                 _claimCourseRepository.ClaimCourse(entity);
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+        }
+
+        public ICollection<ClaimCourse> ClaimCourses()
+        {
+            try
+            {
+                return _claimCourseRepository.ClaimCourses();
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+        }
+
+        public void ApproveClaimCourse(ClaimCourse entity)
+        {
+            try
+            {
+                _claimCourseRepository.ApproveClaimCourse(entity);
             }
             catch (Exception e)
             {

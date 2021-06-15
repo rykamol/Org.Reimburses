@@ -5,10 +5,16 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="5.0.7">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="5.0.7" />
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Core\Org.Reimburse.Core\Org.Reimburse.Core.csproj" />
+    <ProjectReference Include="..\Infrastructure\Org.Reimburse.Data\Org.Reimburse.Data.csproj" />
     <ProjectReference Include="..\Infrastructure\Org.Reimburse.Infrastructure\Org.Reimburse.Infrastructure.csproj" />
   </ItemGroup>
 

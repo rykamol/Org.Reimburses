@@ -2,14 +2,15 @@
 using Org.Reimburse.Core.Repository_Interfaces;
 using Org.Reimburse.Data._Context;
 using System;
+using Org.Reimburse.Core.Business_Interfaces;
 
 namespace Org.Reimburse.Data.Repository
 {
-    public class MonthlyPaidSalaryBusiness : IMonthlyPaidSalaryRepository
+    public class MonthlyPaidSalaryRepository : IMonthlyPaidSalaryRepository
     {
         private readonly OrgDbContext _context;
 
-        public MonthlyPaidSalaryBusiness(OrgDbContext context)
+        public MonthlyPaidSalaryRepository(OrgDbContext context)
         {
             _context = context;
         }

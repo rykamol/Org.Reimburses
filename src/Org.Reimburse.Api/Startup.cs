@@ -9,6 +9,13 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
+using Org.Reimburse.Api.Controllers;
+using Org.Reimburse.Core.Business_Interfaces;
+using Org.Reimburse.Core.Repository_Interfaces;
+using Org.Reimburse.Data._Context;
+using Org.Reimburse.Data.Repository;
+using Org.Reimburse.Infrastructure.Business;
 
 namespace Org.Reimburse.Api
 {
@@ -24,6 +31,21 @@ namespace Org.Reimburse.Api
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddDbContext<OrgDbContext>(option =>
+            {
+                option.UseInMemoryDatabase("OrgDb");
+            });
+
+            services.AddTransient<IEmployeeBusiness, EmployeeBusiness>();
+            services.AddTransient<IEmployeeRepository, EmployeeRepository>();
+
+            services.AddTransient<IClaimCourseBusiness, ClaimCourseBusiness>();
+            services.AddTransient<IClaimCourseRepository, ClaimCourseRepository>();
+            
+            services.AddTransient<IMonthlyPaidSalaryBusiness, MonthlyPaidSalaryBusiness>();
+            services.AddTransient<IMonthlyPaidSalaryRepository, MonthlyPaidSalaryRepository>();
+
+
             services.AddControllers();
         }
 
