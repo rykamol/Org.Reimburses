@@ -36,14 +36,13 @@ namespace Org.Reimburse.Api
                 option.UseInMemoryDatabase("OrgDb");
             });
 
-            services.AddTransient<IEmployeeBusiness, EmployeeBusiness>();
+            services.AddTransient<DbContext, OrgDbContext>();
             services.AddTransient<IEmployeeRepository, EmployeeRepository>();
-
-            services.AddTransient<IClaimCourseBusiness, ClaimCourseBusiness>();
+            services.AddTransient<IEmployeeBusiness, EmployeeBusiness>();
             services.AddTransient<IClaimCourseRepository, ClaimCourseRepository>();
-            
-            services.AddTransient<IMonthlyPaidSalaryBusiness, MonthlyPaidSalaryBusiness>();
+            services.AddTransient<IClaimCourseBusiness, ClaimCourseBusiness>();
             services.AddTransient<IMonthlyPaidSalaryRepository, MonthlyPaidSalaryRepository>();
+            services.AddTransient<IMonthlyPaidSalaryBusiness, MonthlyPaidSalaryBusiness>();
 
 
             services.AddControllers();

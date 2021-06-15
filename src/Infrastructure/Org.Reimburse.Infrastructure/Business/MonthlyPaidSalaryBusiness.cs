@@ -1,23 +1,24 @@
 ﻿using Org.Reimburse.Core.Business_Interfaces;
 using Org.Reimburse.Core.Models;
 using System;
+using Org.Reimburse.Core.Repository_Interfaces;
 
 namespace Org.Reimburse.Infrastructure.Business
 {
     public class MonthlyPaidSalaryBusiness : IMonthlyPaidSalaryBusiness
     {
-        private IMonthlyPaidSalaryBusiness _monthlyPaidSalary;
+        private IMonthlyPaidSalaryRepository _iMonthlyPaidSalaryRepository;
 
-        public MonthlyPaidSalaryBusiness(IMonthlyPaidSalaryBusiness monthlyPaidSalary)
+        public MonthlyPaidSalaryBusiness(IMonthlyPaidSalaryRepository iMonthlyPaidSalaryRepository)
         {
-            _monthlyPaidSalary = monthlyPaidSalary;
+            _iMonthlyPaidSalaryRepository = iMonthlyPaidSalaryRepository;
         }
 
         public void PaySalary(MonthlyPaidSalary entity)
         {
             try
             {
-                _monthlyPaidSalary.PaySalary(entity);
+                _iMonthlyPaidSalaryRepository.PaySalary(entity);
             }
             catch (Exception e)
             {
